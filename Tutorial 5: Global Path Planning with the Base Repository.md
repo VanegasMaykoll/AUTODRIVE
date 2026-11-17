@@ -17,10 +17,6 @@ The base repository already contains many planning algorithms. Each student rece
 
 At the end, the Appendix shows one complete adaptation as an example: a ROS 2 Dijkstra planner with a wall-avoidance cost and a PCHIP smoother.
 
-## Laboratory Material
-
-- **Slides:** [Tutorial 5 presentation](PASTE_PPT_LINK_HERE)
-
 ## Learning Objectives
 
 After completing this laboratory, students should be able to:
@@ -164,9 +160,6 @@ Expected structure:
 
 Only the folder with `package.xml` is a ROS 2 package. `colcon` ignores `scripts/` and `docs/`. The figures in `docs/` were generated with the author's map.
 
-<!-- VIDEO 1: terminal recording of Section 3 (git clone of Global_Planner, pip install, the import check, and the sparse checkout of the tutorial project with the `find` command showing the structure). -->
-PASTE_VIDEO_1_LINK_HERE
-
 # 4. The Base Repository
 
 Inside `~/Global_Planner` the relevant parts are:
@@ -296,8 +289,6 @@ Both points must be `FREE`. Write down the four coordinates: they are the start 
 
 > The start should be where the vehicle appears in the simulator, so that the planned route and the real vehicle match in Section 9.3.
 
-<!-- VIDEO 2: Section 5 on screen: visualize_map.py, add_virtual_wall.py, and clicking the start and goal in pick_start_goal.py (show the FREE result, and also a click inside a wall). -->
-PASTE_VIDEO_2_LINK_HERE
 
 ## 5.2 Why a Virtual Wall?
 
@@ -382,8 +373,8 @@ Three files are written to `--out-dir`:
 
 > The figure was generated with the author's map; yours will have a different shape.
 
-<!-- VIDEO 3: Section 6 on screen: running plan_and_smooth.py with your planner, the validation report, and opening path_overlay.png. -->
-PASTE_VIDEO_3_LINK_HERE
+[video3.webm](https://github.com/user-attachments/assets/758d5b0f-0fa2-4477-abcd-cd506af15612)
+
 
 ## 6.1 Options of `plan_and_smooth.py`
 
@@ -484,9 +475,6 @@ python scripts/plot_waypoints.py \
   -o trajectory_overlay.png
 ```
 
-<!-- VIDEO 4: running the same planner with two different smoothers (for example pchip and cubic_spline), comparing the validation reports and the overlay images. -->
-PASTE_VIDEO_4_LINK_HERE
-
 # 8. Waypoints
 
 Both CSV files have the columns `x, y, yaw`:
@@ -563,8 +551,8 @@ Configure RViz2:
 
 To see a new result, run `plan_and_smooth.py` again and then restart the launch file.
 
-<!-- VIDEO 5: view_paths_launch.py running and RViz2 with the red raw path and the green smoothed path (including the Durability Policy setting). -->
-PASTE_VIDEO_5_LINK_HERE
+[video5.webm](https://github.com/user-attachments/assets/97b186c5-f9f3-4021-b95c-82d141824ef8)
+
 
 ## 9.3 Compare the Route with the Vehicle (Optional)
 
@@ -637,9 +625,6 @@ with the start you used in Section 6.
 > The planned path is expressed in the frame of the saved map. With the SLAM parameters of Tutorial 3, that map starts aligned with the AutoDRIVE `map` frame, so the path should overlap the vehicle, but a small shift caused by SLAM drift is possible.
 
 > Do not restart the simulator while the planner or the bridge are running. Restarting Unity can generate `TF_OLD_DATA` warnings.
-
-<!-- VIDEO 6: simulator + bridge + view_paths_launch.py; RViz2 with TF (and LaserScan) showing the vehicle moving with teleop along the green path. -->
-PASTE_VIDEO_6_LINK_HERE
 
 
 # 10. Common Problems
